@@ -17,14 +17,14 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        LOGGER.info("Starting test");
+        LOGGER.info("Starting test: " + result.getMethod().getMethodName());
         test = extent.createTest(result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        LOGGER.info(result.getTestClass().getTestName() + " passes successfully.");
-        test.log(Status.PASS, result.getTestClass().getTestName() + ": Test Passed");
+        LOGGER.info(result.getMethod().getMethodName() + " passes successfully.");
+        test.log(Status.PASS, result.getMethod().getMethodName() + ": Test Passed");
     }
 
     @Override
