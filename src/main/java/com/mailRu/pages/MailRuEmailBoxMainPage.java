@@ -68,7 +68,10 @@ public class MailRuEmailBoxMainPage implements IMailRuPage {
     }
 
     public boolean checkLoginStatus() {
-        return elementIsDisplayed(loginButton);
+        LOGGER.info("Check login status");
+        boolean loggedOut = elementIsDisplayed(loginButton);
+        LOGGER.info("Do we logged out: " + loggedOut);
+        return loggedOut;
     }
 
     public MailRuSentEmailsFolderPage openSentEmails() {
