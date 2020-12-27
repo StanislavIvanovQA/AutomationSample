@@ -154,7 +154,7 @@ public class Utils {
         return result;
     }
 
-    public static void WaitForAjax() {
+    public static void waitForAjax() {
         JavascriptExecutor executor = DriverManager.getJavaScripExecutor();
         Duration duration = Duration.of(100, ChronoUnit.MILLIS);
         Actions wait = DriverManager.getActions().pause(duration);
