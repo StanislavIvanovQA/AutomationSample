@@ -41,7 +41,6 @@ public class MailRuEmailPage implements IMailRuPage {
     }
 
     public String getLetterBodyValue() {
-        String x = getElementText(body);
         return getElementText(body);
     }
 }
