@@ -23,15 +23,4 @@ public class ExtentReporter {
 
         return extent;
     }
-
-    @Test
-    public void initialDemo() {
-        ExtentTest test = extent.createTest("Initial Demo");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.google.com/");
-        System.out.println(driver.getTitle());
-        driver.close();
-        extent.flush();
-    }
 }
