@@ -154,13 +154,11 @@ public class Utils {
         return result;
     }
 
-    public static void WaitForAjax()
-    {
+    public static void WaitForAjax() {
         JavascriptExecutor executor = DriverManager.getJavaScripExecutor();
         Duration duration = Duration.of(100, ChronoUnit.MILLIS);
         Actions wait = DriverManager.getActions().pause(duration);
-        while (true)
-        {
+        while (true) {
             boolean ajaxIsComplete = Boolean.parseBoolean(executor.executeScript("return jQuery.active == 0").toString());
             if (ajaxIsComplete)
                 break;
@@ -168,12 +166,10 @@ public class Utils {
         }
     }
 
-    public static String getTextFromFirstNode(WebElement e)
-    {
+    public static String getTextFromFirstNode(WebElement e) {
         String text = e.getText().trim();
         List<WebElement> children = e.findElements(By.xpath("./*"));
-        for (WebElement child : children)
-        {
+        for (WebElement child : children) {
             text = text.replaceFirst(child.getText(), "").trim();
         }
         return text;

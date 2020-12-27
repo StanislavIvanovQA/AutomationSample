@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.utils.Utils.WaitForAjax;
 import static com.utils.Utils.checkElementText;
 import static com.utils.Utils.clearFieldAndSendKeys;
 import static com.utils.Utils.clickWithSelenium;

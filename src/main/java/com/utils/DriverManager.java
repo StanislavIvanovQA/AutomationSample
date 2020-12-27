@@ -1,7 +1,6 @@
 package com.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -64,18 +62,18 @@ public class DriverManager {
     }
 
     protected static WebDriverWait getWebDriverWaitWithPolling(int wait) {
-            WebDriverWait webDriverWait = new WebDriverWait(getDriver(), wait);
-            webDriverWait.pollingEvery(Duration.ofMillis(100));
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), wait);
+        webDriverWait.pollingEvery(Duration.ofMillis(100));
         return webDriverWait;
     }
 
     protected static WebDriverWait getWebDriverWait(int wait) {
-            WebDriverWait webDriverWait = new WebDriverWait(getDriver(), wait);
+        WebDriverWait webDriverWait = new WebDriverWait(getDriver(), wait);
         return webDriverWait;
     }
 
     protected static JavascriptExecutor getJavaScripExecutor() {
-        JavascriptExecutor executor = (JavascriptExecutor)getDriver();
+        JavascriptExecutor executor = (JavascriptExecutor) getDriver();
         return executor;
     }
 
