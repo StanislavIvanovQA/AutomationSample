@@ -51,7 +51,7 @@ public class Utils {
     public static String getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File file = screenshot.getScreenshotAs(OutputType.FILE);
-        String destinationFile = System.getProperty("user.dir") + "\\reports\\screenshot " + getCurrentTimestamp() + ".png";
+        String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + getCurrentTimestamp() + ".png";
         FileUtils.copyFile(file, new File(destinationFile));
         return destinationFile;
     }

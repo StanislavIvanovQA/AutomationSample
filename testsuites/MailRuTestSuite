@@ -5,7 +5,7 @@
         <listener class-name="com.utils.Listeners"></listener>
     </listeners>
 
-    <test name="Mail.Ru login and auth tests" thread-count="1" parallel="none">
+    <test name="MailRu login and auth tests" thread-count="1" parallel="none">
         <classes>
             <class name="com.mailRu.tests.LoginAndAuthorisationTests"/>
         </classes>
