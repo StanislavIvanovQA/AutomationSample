@@ -1,0 +1,5 @@
+browser=chrome
+isHeadless=false
+url=https://mail.ru/
+login=stanislav.ivanov-qa
+password=TestTaskEmailPassword123

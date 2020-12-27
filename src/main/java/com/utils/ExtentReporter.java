@@ -9,10 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class ExtentReporter {
-    static ExtentReports extent;
+    private static ExtentReports extent;
 
     public static ExtentReports getReportObject() {
-        String path = System.getProperty("user.dir") + "\\reports\\report_" + Utils.getCurrentTimestamp() + ".html";
+        String path = System.getProperty("user.dir") + "\\reports\\report " + Utils.getCurrentTimestamp() + ".html";
         ExtentSparkReporter reporter = new ExtentSparkReporter(path);
         reporter.config().setReportName("Web Automation Results");
         reporter.config().setDocumentTitle("Test Results");

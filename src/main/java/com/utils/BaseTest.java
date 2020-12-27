@@ -1,14 +1,12 @@
 package com.utils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import java.io.File;
@@ -19,49 +17,38 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    public WebDriver driver;
-    Properties properties = new Properties();
-    String url;
-    String propertiesPath = "\\src\\main\\resources\\data.properties";
+    protected static WebDriver driver;
+    protected static String url;
+    protected static String login;
+    protected static String password;
+    protected static String browserName;
+    protected static boolean isHeadless;
 
-    @BeforeTest
-    public void openBrowser() throws IOException {
+    protected static void getProperties(String propertiesPath) throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(System.getProperty("user.dir") + propertiesPath));
+        url = properties.getProperty("url");
+        login = properties.getProperty("login");
+        password = properties.getProperty("password");
+        browserName = properties.getProperty("browser");
+        isHeadless = Boolean.parseBoolean(properties.getProperty("isHeadless"));
+
+        LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+        File file = new File(System.getProperty("user.dir") + "/src/main/resources/log4j2.xml");
+    }
+
+    @BeforeMethod
+    protected static void openBrowser() throws IOException {
         driver = initializeDriver();
         driver.get(url);
     }
 
-    @AfterTest
-    public void closeBrowser() {
+    @AfterMethod
+    protected static void closeBrowser() {
         driver.quit();
     }
 
-    public WebDriver initializeDriver() throws IOException {
-        System.out.println(System.getProperty("user.dir"));
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + propertiesPath);
-        properties.load(fis);
-        String browserName = properties.getProperty("browser");
-        boolean isHeadless = Boolean.parseBoolean(properties.getProperty("isHeadless"));
-        url = properties.getProperty("url");
-
-        switch (browserName) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                if (isHeadless) {
-                    options.setHeadless(true);
-                }
-                driver = new ChromeDriver(options);
-                break;
-
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-        }
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-
-        return driver;
+    protected static WebDriver initializeDriver() {
+        return DriverManager.initialize(browserName, isHeadless);
     }
 }
