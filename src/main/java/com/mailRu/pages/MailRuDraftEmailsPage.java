@@ -16,7 +16,7 @@ public class MailRuDraftEmailsPage implements IMailRuPage {
 
     public MailRuNewEmailModal openFirstDraftMessageFromDraftMessageList() {
         LOGGER.info("Open first draft message from draft message list");
-        emailListComponent.openFirstDraftMessageFromDraftMessageList();
+        emailListComponent.openFirstMessageFromMessageList();
         return new MailRuNewEmailModal(this);
     }
 }

@@ -24,7 +24,7 @@ public class EmailListComponent {
         PageFactory.initElements(driver, this);
     }
 
-    public void openFirstDraftMessageFromDraftMessageList() {
+    public void openFirstMessageFromMessageList() {
         waitForAjax();
         //Need to figure out how to get rid of this static wait here
         lowWait();

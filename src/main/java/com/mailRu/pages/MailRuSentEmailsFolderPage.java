@@ -16,7 +16,7 @@ public class MailRuSentEmailsFolderPage implements IMailRuPage {
 
     public MailRuEmailPage openFirstSentMessageFromList() {
         LOGGER.info("Open first sent message from sent message list");
-        emailListComponent.openFirstDraftMessageFromDraftMessageList();
+        emailListComponent.openFirstMessageFromMessageList();
         return new MailRuEmailPage();
     }
 }
