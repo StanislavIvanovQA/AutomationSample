@@ -107,21 +107,21 @@ public class MailRuNewEmailModal<T extends IMailRuPage> {
     }
 
     public String getToTextValue() {
-        LOGGER.info("Get test from input field");
+        LOGGER.info("Get text from To field");
         String toValue = getElementText(toInputFieldPopulated);
         LOGGER.info("Text of To field is: " + toValue);
         return toValue;
     }
 
     public String getSubjectTextValue() {
-        LOGGER.info("Get test from input field");
+        LOGGER.info("Get text from Subject field");
         String subjectValue = getAttributeValue(subjectInputField, "value");
         LOGGER.info("Text of Subject field is: " + subjectValue);
         return subjectValue;
     }
 
     public String getEmailBodyTextValue() {
-        LOGGER.info("Get test from input field");
+        LOGGER.info("Get text from Email Body field");
         String emailBodyValue = getElementText(emailBodyInputField);
         LOGGER.info("Text of Email Body field is: " + emailBodyValue);
         return emailBodyValue;
