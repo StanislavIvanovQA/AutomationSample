@@ -28,9 +28,6 @@ public class BaseTest {
         password = properties.getProperty("password");
         browserName = properties.getProperty("browser");
         isHeadless = Boolean.parseBoolean(properties.getProperty("isHeadless"));
-
-        LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
-        File file = new File(System.getProperty("user.dir") + "/src/main/resources/log4j2.xml");
     }
 
     @BeforeMethod
