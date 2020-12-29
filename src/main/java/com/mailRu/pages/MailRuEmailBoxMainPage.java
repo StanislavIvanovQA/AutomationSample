@@ -8,10 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.utils.Utils.waitForAjax;
 import static com.utils.Utils.clickWithSelenium;
 import static com.utils.Utils.elementIsDisplayed;
 import static com.utils.Utils.getCurrentPageTitle;
+import static com.utils.Utils.waitForAjax;
 
 public class MailRuEmailBoxMainPage implements IMailRuPage {
     private static Logger LOGGER = LogManager.getLogger(MailRuMainPage.class);

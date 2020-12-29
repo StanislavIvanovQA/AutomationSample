@@ -9,9 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.utils.Utils.waitForAjax;
 import static com.utils.Utils.clickWithSelenium;
 import static com.utils.Utils.lowWait;
+import static com.utils.Utils.waitForAjax;
 
 public class EmailListComponent {
     private static Logger LOGGER = LogManager.getLogger(MailRuNewEmailModal.class);
