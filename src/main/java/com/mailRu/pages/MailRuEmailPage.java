@@ -12,7 +12,7 @@ import static com.utils.Utils.getCurrentPageTitle;
 import static com.utils.Utils.getElementText;
 
 public class MailRuEmailPage implements IMailRuPage {
-    private static Logger LOGGER = LogManager.getLogger(MailRuMainPage.class);
+    private static Logger LOGGER = LogManager.getLogger(MailRuEmailPage.class);
 
     @FindBy(xpath = "//div[@class='letter__recipients letter__recipients_short']/span[@class='letter-contact']")
     private WebElement to;

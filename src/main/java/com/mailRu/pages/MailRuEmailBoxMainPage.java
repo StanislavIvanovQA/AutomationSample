@@ -14,7 +14,7 @@ import static com.utils.Utils.getCurrentPageTitle;
 import static com.utils.Utils.waitForAjax;
 
 public class MailRuEmailBoxMainPage implements IMailRuPage {
-    private static Logger LOGGER = LogManager.getLogger(MailRuMainPage.class);
+    private static Logger LOGGER = LogManager.getLogger(MailRuEmailBoxMainPage.class);
 
     @FindBy(xpath = "//span[@class='compose-button__wrapper']/span")
     private WebElement newEmailButton;

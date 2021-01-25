@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 import static com.utils.Utils.getCurrentPageTitle;
 
 public class MailRuSentEmailsFolderPage implements IMailRuPage {
-    private static Logger LOGGER = LogManager.getLogger(MailRuNewEmailModal.class);
+    private static Logger LOGGER = LogManager.getLogger(MailRuSentEmailsFolderPage.class);
     private EmailListComponent emailListComponent = new EmailListComponent();
 
     public String getPageTitle() {

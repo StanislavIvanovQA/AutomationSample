@@ -14,7 +14,6 @@ import org.testng.asserts.SoftAssert;
 import static com.utils.Utils.getFishText;
 
 public class LoginAndAuthorisationTests extends MailRuBaseTest {
-    private static Logger LOGGER = LogManager.getLogger(LoginAndAuthorisationTests.class);
 
     @Test
     public static void enterMailBoxCheckDraftAndExitTest() {

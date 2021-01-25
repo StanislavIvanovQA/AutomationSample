@@ -14,8 +14,6 @@ import static com.utils.Utils.lowWait;
 import static com.utils.Utils.waitForAjax;
 
 public class EmailListComponent {
-    private static Logger LOGGER = LogManager.getLogger(MailRuNewEmailModal.class);
-
     @FindBy(xpath = "(//div[@class='dataset__items']/a/div[@class='llc__container'])[1]")
     private WebElement firstMessage;
 
